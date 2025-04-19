@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import { Chatbot } from '../components/Chatbot';
 
 const MainLayout = ({ children }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -140,6 +141,8 @@ const MainLayout = ({ children }) => {
       
       <main className="py-6 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         {children}
+
+        <Chatbot />
       </main>
     </div>
   );
