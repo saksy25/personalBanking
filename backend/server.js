@@ -10,7 +10,7 @@ const nodemailer = require('nodemailer');
 const { connectDB, User, Transaction, Balance, LoginHistory, LoginAttempt, MFACode, Session } = require('./db');
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5001;
 const JWT_SECRET = process.env.JWT_SECRET || 'your-secure-jwt-secret-key';
 
 // Connect to MongoDB
