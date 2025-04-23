@@ -56,8 +56,13 @@ const recordLoginHistory = async (userId, status, deviceInfo, location) => {
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: process.env.EMAIL_USER || 'your-email@gmail.com',
-    pass: process.env.EMAIL_PASS || 'your-email-password'
+    user: process.env.EMAIL_USER,
+    // || 'your-email@gmail.com'
+    pass: process.env.EMAIL_PASS 
+    // || 'your-email-password'
+  },
+  tls: {
+    rejectUnauthorized: false // Only use this in development
   }
 });
 
@@ -182,7 +187,13 @@ app.post('/api/auth/login', async (req, res) => {
     );
     
     // Send MFA code
-    await sendMFACode(email, mfaCode);
+    const emailSent = await sendMFACode(email, mfaCode);
+    console.log(`Email sending status for ${email}: ${emailSent ? 'Success' : 'Failed'}`);
+    
+    if (!emailSent) {
+      // Handle email sending failure
+      return res.status(500).json({ message: 'Failed to send verification code' });
+    }
     
     res.json({ requiresMFA: true, email });
   } catch (error) {
