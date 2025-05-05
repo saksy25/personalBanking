@@ -71,25 +71,25 @@ export const Dashboard = () => {
   
   return (
     <div className="space-y-6">
-      <div className="bg-white shadow rounded-lg p-6">
+      <div className="bg-gradient-to-r from-blue-800 to-blue-600 rounded-lg shadow-lg overflow-hidden p-6">
         <div className="flex items-center justify-between">
-          <h2 className="text-lg font-medium text-gray-900">Current Balance</h2>
+          <h2 className="text-lg font-medium text-white">Current Balance</h2>
           <button
             onClick={toggleBalanceVisibility}
             className="p-1 rounded-md hover:bg-gray-100"
           >
             {showBalance ? (
-              <EyeSlashIcon className="h-5 w-5 text-gray-500" />
+              <EyeSlashIcon className="h-5 w-5 text-white" />
             ) : (
-              <EyeIcon className="h-5 w-5 text-gray-500" />
+              <EyeIcon className="h-5 w-5 text-white" />
             )}
           </button>
         </div>
         <div className="mt-2">
           {showBalance ? (
-            <p className="text-3xl font-bold text-gray-900">${parseFloat(balance).toFixed(2)}</p>
+            <p className="text-3xl font-bold text-white">${parseFloat(balance).toFixed(2)}</p>
           ) : (
-            <p className="text-3xl font-bold text-gray-900">****.**</p>
+            <p className="text-3xl font-bold text-white">****.**</p>
           )}
         </div>
       </div>
