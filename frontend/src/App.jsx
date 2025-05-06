@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { useAuth } from './context/AuthContext';
 import Login from './pages/Login';
+import LandingPage from './pages/Landing';
 import Register from './pages/Register';
 import DashboardPage from './pages/DashboardPage';
 import TransactionsPage from './pages/TransactionsPage';
@@ -17,13 +18,14 @@ function ProtectedRoute({ children }) {
     return <div className="flex items-center justify-center h-screen">Loading...</div>;
   }
   
-  return isAuthenticated ? children : <Navigate to="/login" />;
+  return isAuthenticated ? children : <Navigate to="/securebank" />;
 }
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/securebank" element={<LandingPage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/" element={
