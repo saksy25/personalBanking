@@ -138,7 +138,7 @@ export const Dashboard = () => {
             </div>
           </div>
           <p className="text-sm text-gray-500 mb-4">Send money securely</p>
-          <a href="/transfers" className="flex items-center text-blue-600 hover:text-blue-800 text-sm font-medium">
+          <a href="/transfer" className="flex items-center text-blue-600 hover:text-blue-800 text-sm font-medium">
             Start transfer
             <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
