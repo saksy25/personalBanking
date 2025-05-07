@@ -70,8 +70,11 @@ export const LoginForm = () => {
     <div className="min-h-screen flex items-center justify-center bg-gray-50">
       <div className="max-w-md w-full space-y-8 p-8 bg-white rounded-xl shadow-lg">
         <div>
+        <h1 className="mt-2 text-center text-5xl font-extrabold text-blue-800">
+            SecureBank
+          </h1>
           <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-            Secure Banking Login
+            Login
           </h2>
         </div>
         
@@ -238,8 +241,11 @@ export const RegisterForm = () => {
     <div className="min-h-screen flex items-center justify-center bg-gray-50">
       <div className="max-w-md w-full space-y-8 p-8 bg-white rounded-xl shadow-lg">
         <div>
+        <h1 className="mt-2 text-center text-5xl font-extrabold text-blue-800">
+            SecureBank
+          </h1>
           <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-            Create your account
+            Sign Up
           </h2>
         </div>
         

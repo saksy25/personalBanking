@@ -519,7 +519,6 @@ function processMessage(message, user) {
   if (bestMatch && highestScore > 0.3) {
     return bestMatch.answer;
   }
-  
   // Default response if no good match
   return "I'm not sure I understand your question. Could you rephrase it or select from common topics like transfers, account access, security, or fees?";
 }
@@ -540,24 +539,11 @@ function calculateMatchScore(tokens, keywords) {
 async function logChatbotInteraction(userId, query, response) {
   try {
     // You could create a new model for this if you want to track interactions
-    // For now, we'll just log to console
     console.log(`Chatbot interaction - User: ${userId}, Query: "${query}", Response: "${response}"`);
   } catch (error) {
     console.error('Error logging chatbot interaction:', error);
   }
 }
-
-// Create a schema for chatbot interactions if you want to store them
-/*
-const chatbotInteractionSchema = new mongoose.Schema({
-  userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
-  query: { type: String, required: true },
-  response: { type: String, required: true },
-  timestamp: { type: Date, default: Date.now }
-});
-
-const ChatbotInteraction = mongoose.model('ChatbotInteraction', chatbotInteractionSchema);
-*/
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
