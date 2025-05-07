@@ -4,7 +4,6 @@ import { getAccountBalance, getTransactions } from '../utils/api';
 import { EyeIcon, EyeSlashIcon } from '@heroicons/react/24/outline';
 import leafImg from '../assets/leaf.png'; // adjust
 
-
 export const Dashboard = () => {
   const [balance, setBalance] = useState(null);
   const [transactions, setTransactions] = useState([]);
