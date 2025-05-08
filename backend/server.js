@@ -372,7 +372,7 @@ app.post('/api/account/transfer', authenticateToken, async (req, res) => {
       userId: recipientUser._id,
       type: 'credit',
       amount: transferAmount.toFixed(2),
-      description: `Transfer from ${recipientName} ${req.user.lastName}`,
+      description: `Transfer from ${req.user.firsttName} ${req.user.lastName}`,
       reference,
     });
     
